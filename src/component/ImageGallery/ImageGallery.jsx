@@ -1,5 +1,5 @@
-import { ImageCard } from '../imageCard/imageCard';
-import css from './imageGallery.module.css';
+import { ImageCard } from '../ImageCard/ImageCard';
+import css from './ImageGallery.module.css';
 
 export const ImageGallery = ({ items }) => {
   return (

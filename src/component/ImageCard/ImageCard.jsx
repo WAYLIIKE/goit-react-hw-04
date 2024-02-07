@@ -1,6 +1,6 @@
 import { Modal } from 'react-modal';
 import { useState } from 'react';
-import css from './imageCard.module.css';
+import css from './ImageCard.module.css';
 
 export const ImageCard = ({
   data: {
