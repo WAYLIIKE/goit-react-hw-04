@@ -43,12 +43,12 @@ function App() {
 
     async function fetchData() {
       try {
-        setImages(prevData => ({ ...prevData, loading: false, error: false }));
         const response = await getImage(query, page);
         setImages(prevElements => ({
           ...prevElements,
           items: [...prevElements.items, ...response.results],
         }));
+        setImages(prevData => ({ ...prevData, loading: false, error: false }));
         setTotalPages(response.total_pages);
       } catch (error) {
         setImages(prevElements => ({
