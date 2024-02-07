@@ -16,7 +16,7 @@ function App() {
   });
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = useState(2);
 
   const onSearch = async newQuery => {
     setQuery(`${Date.now()}/${newQuery}`);
@@ -49,8 +49,7 @@ function App() {
           ...prevElements,
           items: [...prevElements.items, ...response.results],
         }));
-        // setTotalPages(response.total_pages);
-        // console.log(`Totalpage`, totalPages);
+        setTotalPages(response.total_pages);
       } catch (error) {
         setImages(prevElements => ({
           ...prevElements,
@@ -73,7 +72,7 @@ function App() {
       {images.error && <ErrorMessage />}
       {images.items.length > 0 && <ImageGallery items={images.items} />}
       {images.loading && <Loader />}
-      {images.items.length > 0 && !images.loading && (
+      {images.items.length > 0 && !images.loading && page < totalPages && (
         <LoadMoreBtn onPagination={handlePagination} />
       )}
       <Toaster position="top-right" />
