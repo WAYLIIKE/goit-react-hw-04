@@ -13,8 +13,8 @@ export const ImageCard = ({
   // const [modalIsOpen, setIsOpen] = useState(false);
 
   // function openModal() {
-  // console.log('open', alt_description);
-  // setIsOpen(true);
+  //   console.log('open', alt_description);
+  //   setIsOpen(true);
   // }
 
   // function closeModal() {
@@ -22,17 +22,22 @@ export const ImageCard = ({
   // }
 
   return (
-    <li key={id}>
-      <img
-        src={small}
-        alt={alt_description}
-        width="400"
-        height="400"
-        // onClick={openModal}
-      />
-      {/* <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        <button onClick={closeModal}>close</button>
-      </Modal> */}
-    </li>
+    <>
+      <li key={id}>
+        <img
+          className={css.image}
+          src={small}
+          alt={alt_description}
+          width="400"
+          height="400"
+          // onClick={openModal}
+        />
+      </li>
+      {/* {modalIsOpen && (
+        <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+          <button onClick={closeModal}>close</button>
+        </Modal>
+      )} */}
+    </>
   );
 };

@@ -13,10 +13,10 @@ export const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className={css.container}>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="query" />
-        <button>Search</button>
+        <input className={css.input} type="text" name="query" />
+        <button className={css.button}>Search</button>
       </form>
     </div>
   );
