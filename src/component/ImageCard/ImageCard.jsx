@@ -1,6 +1,7 @@
-import { Modal } from 'react-modal';
+import Modal from 'react-modal';
 import { useState } from 'react';
 import css from './ImageCard.module.css';
+import { TfiClose } from 'react-icons/tfi';
 
 export const ImageCard = ({
   data: {
@@ -25,14 +26,25 @@ export const ImageCard = ({
           alt={alt_description}
           width="400"
           height="400"
-          // onClick={toggleModal}
+          onClick={toggleModal}
         />
+        {modalIsOpen && (
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={toggleModal}
+            ariaHideApp={false}
+            className={css.modal}
+          >
+            <TfiClose className={css.button} onClick={toggleModal} size={25} />
+            <img
+              src={regular}
+              alt={alt_description}
+              width="100%"
+              height="100%"
+            />
+          </Modal>
+        )}
       </li>
-      {/* {modalIsOpen && (
-        <Modal isOpen={modalIsOpen} onRequestClose={toggleModal}>
-          <button onClick={toggleModal}>close</button>
-        </Modal>
-      )} */}
     </div>
   );
 };
