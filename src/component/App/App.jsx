@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { getImage } from '../../imageApi';
 import css from './App.module.css';
 import { SearchBar } from '../SerachBar/SearchBar';
-import { ImageGallery } from '../imageGallery/imageGallery';
+import { ImageGallery } from '../ImageGallery/ImageGallery';
 import { Loader } from '../Loader/Loader';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { Toaster } from 'react-hot-toast';
