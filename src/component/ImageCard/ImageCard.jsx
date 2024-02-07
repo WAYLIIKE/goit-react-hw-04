@@ -10,19 +10,14 @@ export const ImageCard = ({
     alt_description,
   },
 }) => {
-  // const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
-  // function openModal() {
-  //   console.log('open', alt_description);
-  //   setIsOpen(true);
-  // }
-
-  // function closeModal() {
-  //   setIsOpen(false);
-  // }
+  function toggleModal() {
+    setIsOpen(prevValue => !prevValue);
+  }
 
   return (
-    <>
+    <div>
       <li key={id}>
         <img
           className={css.image}
@@ -30,14 +25,14 @@ export const ImageCard = ({
           alt={alt_description}
           width="400"
           height="400"
-          // onClick={openModal}
+          // onClick={toggleModal}
         />
       </li>
       {/* {modalIsOpen && (
-        <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-          <button onClick={closeModal}>close</button>
+        <Modal isOpen={modalIsOpen} onRequestClose={toggleModal}>
+          <button onClick={toggleModal}>close</button>
         </Modal>
       )} */}
-    </>
+    </div>
   );
 };
